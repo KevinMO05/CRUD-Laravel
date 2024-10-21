@@ -11,6 +11,8 @@ Route::post('/store', [PosterController::class, 'store'])->name('posters.store')
 
 Route::get('/posters/{id}/edit', [PosterController::class, 'edit'])->name('posters.edit');
 
+Route::get('/posters/{id}', [PosterController::class, 'show'])->name('posters.show');
+
 Route::put('/posters/{id}', [PosterController::class, 'update'])->name('posters.update');
 
 Route::delete('/posters/{id}', [PosterController::class, 'destroy'])->name('posters.destroy');

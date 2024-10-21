@@ -18,9 +18,11 @@ return new class extends Migration
             $table->decimal('precio', 10, 2);
             $table->year('anio_vehiculo');
             $table->date('fecha_publicacion')->default(now());
+            $table->string('foto'); 
             $table->timestamps();
         });
     }
+    
 
     /**
      * Reverse the migrations.

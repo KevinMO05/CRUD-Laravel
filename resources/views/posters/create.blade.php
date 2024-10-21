@@ -3,7 +3,7 @@
 @section('title', 'Crear Poster')
 
 @section('content')
-    <h1 class="text-2xl font-bold mb-4">Crear un Nuevo vehiculo</h1>
+    <h1 class="text-2xl font-bold mb-4">Crear un nuevo poster</h1>
 
     <!-- Formulario para crear poster -->
     <form action="{{ route('posters.store') }}" method="POST" enctype="multipart/form-data" class="bg-white shadow-md rounded-lg p-6 w-[80%] mx-auto">
@@ -28,6 +28,13 @@
                 required>
         </div>
 
+        <!-- Campo foto -->
+        <div class="mb-4">
+            <label for="precio" class="block text-gray-700 font-bold mb-2">Foto del poster:</label>
+            <input type="file" name="foto" id="foto" class="w-full border px-3 py-2 rounded-lg"
+                required>
+        </div>
+
         <!-- Campo Año del Vehículo -->
         <div class="mb-4">
             <label for="anio_vehiculo" class="block text-gray-700 font-bold mb-2">Año del Vehículo:</label>
@@ -46,7 +53,7 @@
        <!-- Botón para crear -->
         <div class="flex justify-end">
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
-                Crear vehiculo
+                Crear poster
             </button>
         </div>
     </form>

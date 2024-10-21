@@ -14,10 +14,10 @@
     <!-- Navbar -->
     <nav class="bg-black text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-lg font-bold">KevCar</a>
+            <a href="#" class="text-lg font-bold">Kev Posters</a>
             <div>
-                <a href="#" class="mx-4 text-white hover:text-gray-300">Carros</a>
-                <a href="{{ route('posters.create') }}" class="text-white hover:text-gray-300">Crear carro</a>
+                <a href="#" class="mx-4 text-white hover:text-gray-300">Posters</a>
+                <a href="{{ route('posters.create') }}" class="text-white hover:text-gray-300">Crear poster</a>
             </div>
         </div>
     </nav>

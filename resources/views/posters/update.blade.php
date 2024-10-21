@@ -3,12 +3,12 @@
 @section('title', 'Actualizar Vehículo')
 
 @section('content')
-    <h1 class="text-2xl font-bold mb-4">Actualizar Vehículo</h1>
+    <h1 class="text-2xl font-bold mb-4">Actualizar Poster</h1>
 
     <!-- Formulario para actualizar vehículo -->
-    <form action="{{ route('posters.update', $poster->id) }}" method="POST" class="bg-white shadow-md rounded-lg p-6 w-[80%] mx-auto">
+    <form action="{{ route('posters.update', $poster->id) }}" method="POST" enctype="multipart/form-data" class="bg-white shadow-md rounded-lg p-6 w-[80%] mx-auto">
         @csrf
-        @method('PUT') <!-- Necesario para actualizar un registro -->
+        @method('PUT') <!-- necesario para actualizar un registro -->
 
         <!-- Campo Nombre -->
         <div class="mb-4">
@@ -34,6 +34,18 @@
             <input type="number" name="anio_vehiculo" id="anio_vehiculo" class="w-full border px-3 py-2 rounded-lg" value="{{ $poster->anio_vehiculo }}" required>
         </div>
 
+        <!-- Campo Foto actual -->
+        <div class="mb-4">
+            <label for="foto_actual" class="block text-gray-700 font-bold mb-2">Foto Actual:</label>
+            <img src="{{ asset('storage/posters/' . $poster->foto) }}" alt="{{ $poster->nombre }}" class="w-32 h-32 object-cover mb-2">
+        </div>
+
+        <!-- Campo para subir nueva imagen -->
+        <div class="mb-4">
+            <label for="foto" class="block text-gray-700 font-bold mb-2">Cambiar Foto:</label>
+            <input type="file" name="foto" id="foto" class="w-full border px-3 py-2 rounded-lg">
+        </div>
+
         <!-- Campo Fecha de Publicación (bloqueado) -->
         <div class="mb-4">
             <label for="fecha_publicacion" class="block text-gray-700 font-bold mb-2">Fecha de Publicación:</label>
@@ -43,10 +55,8 @@
        <!-- Botón para actualizar -->
         <div class="flex justify-end">
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
-                Actualizar Vehículo
+                Actualizar poster
             </button>
         </div>
     </form>
-
 @endsection
-
